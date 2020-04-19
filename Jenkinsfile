@@ -6,11 +6,6 @@ pipeline {
     }
 
     stages {
-        stage(' Clean workspace') {
-            steps {
-                cleanWs()
-            }
-        }
         stage('Install dependencies') {
             steps {
                 sh 'mvn clean verify --no-transfer-progress'
