@@ -1,4 +1,4 @@
-package me.leonmydla.mailfacilitator.mailing
+package dev.mydla.mms.mailing
 
 import org.springframework.boot.context.properties.ConfigurationProperties
 import org.springframework.context.annotation.Configuration

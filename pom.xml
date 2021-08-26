@@ -10,10 +10,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
-	<groupId>me.leonmydla</groupId>
-	<artifactId>mail-facilitator</artifactId>
+	<groupId>dev.mydla</groupId>
+	<artifactId>mms</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>mail-facilitator</name>
+	<name>Mail micro service</name>
 	<description>A microservice for sending mails via HTTP</description>
 
 	<properties>
