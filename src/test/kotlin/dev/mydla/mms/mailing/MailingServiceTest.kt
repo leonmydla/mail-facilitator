@@ -1,4 +1,4 @@
-package me.leonmydla.mailfacilitator.mailing
+package dev.mydla.mms.mailing
 
 import io.mockk.every
 import io.mockk.impl.annotations.InjectMockKs

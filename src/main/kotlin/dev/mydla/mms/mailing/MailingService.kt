@@ -1,4 +1,4 @@
-package me.leonmydla.mailfacilitator.mailing
+package dev.mydla.mms.mailing
 
 import org.springframework.mail.javamail.JavaMailSender
 import org.springframework.mail.javamail.MimeMessageHelper

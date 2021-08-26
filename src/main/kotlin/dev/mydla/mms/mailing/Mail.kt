@@ -1,4 +1,4 @@
-package me.leonmydla.mailfacilitator.mailing
+package dev.mydla.mms.mailing
 
 internal data class Mail(
   var subject: String,
