@@ -7,7 +7,6 @@ jobs:
     name: Test MMS
     runs-on: ubuntu-latest
 
-
     steps:
       - uses: actions/checkout@v2
 
@@ -22,10 +21,7 @@ jobs:
           cache-name: m2
         with:
           path: /home/runner/.m2
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-$CI_BUILD_REF_NAME
-          restore-keys: |
-            ${{ runner.os }}-${{ env.cache-name }}-$CI_BUILD_REF_NAME
+          key: ${{ runner.os }}-build-${{ env.cache-name }}
 
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots verify
-
