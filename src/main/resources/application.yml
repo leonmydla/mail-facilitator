@@ -1,14 +1,14 @@
 server:
-  servlet:
-    context-path: /api/mail
+  port: 8080
+  servlet.context-path: /api/mail
 
 spring:
   mail:
-    host: ${MAIL_HOST}
+    host: ${MMS_HOST}
     protocol: smtp
-    port: ${MAIL_PORT}
-    username: ${MAIL_USERNAME}
-    password: ${MAIL_PASSWORD}
+    port: ${MMS_PORT}
+    username: ${MMS_USERNAME}
+    password: ${MMS_PASSWORD}
     properties:
       mail:
         smtp:
@@ -16,3 +16,7 @@ spring:
           starttls:
             enable: true
             required: true
+
+mms:
+  sender: ${MMS_SENDER}
+  recipient: ${MMS_RECIPIENT}

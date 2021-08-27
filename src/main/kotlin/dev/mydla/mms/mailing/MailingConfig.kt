@@ -4,7 +4,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties
 import org.springframework.context.annotation.Configuration
 
 @Configuration
-@ConfigurationProperties("mailing")
+@ConfigurationProperties("mms")
 internal class MailingConfig {
 
     lateinit var sender: String
