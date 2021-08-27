@@ -82,7 +82,7 @@ internal class MailingServiceTest {
 
     @Test
     fun `should send MimeMessage created by the JavaMailSender`() {
-        val expectedMessage = jMailSender.createMimeMessage();
+        val expectedMessage = jMailSender.createMimeMessage()
 
         every { jMailSender.createMimeMessage() } answers { expectedMessage }
 
@@ -98,7 +98,7 @@ internal class MailingServiceTest {
 
     private fun captureMail(): MimeMessage {
         val message = slot<MimeMessage>()
-        val mail = Mail(subject, content, replyRecipient)
+        val mail = MailVo(replyRecipient, subject, content)
 
         every { config.sender } returns sender
         every { config.recipient } returns recipient

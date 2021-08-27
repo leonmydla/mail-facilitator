@@ -11,12 +11,12 @@ internal class MailingService(
     private val jMailSender: JavaMailSender
 ) {
 
-    fun send(mail: Mail) {
+    fun send(mail: MailVo) {
         val mimeMessage = assembleMessage(mail)
         jMailSender.send(mimeMessage)
     }
 
-    private fun assembleMessage(mail: Mail): MimeMessage {
+    private fun assembleMessage(mail: MailVo): MimeMessage {
         val mimeMessage = jMailSender.createMimeMessage()
         val messageHelper = MimeMessageHelper(mimeMessage)
 
@@ -25,7 +25,7 @@ internal class MailingService(
             setTo(config.recipient)
             setReplyTo(mail.replyTo)
             setSubject(mail.subject)
-            setText(mail.text)
+            setText(mail.message)
         }
 
         return mimeMessage
