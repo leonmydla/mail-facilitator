@@ -29,33 +29,33 @@ class MailingControllerTest {
     fun `should send mail via service`() {
         every { service.send(any()) } answers { nothing }
 
-        classUndertest.send(replyRecipient, subject, message)
+        classUndertest.send(MailDto(replyRecipient, subject, message))
 
         verify(exactly = 1) { service.send(any()) }
     }
 
     @Test
     fun `should not accept empty recipient`() {
-        val exception = assertThrows<IllegalArgumentException> { classUndertest.send("", subject, message) }
+        val exception = assertThrows<IllegalArgumentException> { classUndertest.send(MailDto("", subject, message)) }
         assertThat(exception.message).isEqualTo("replyTo can not be empty")
     }
 
     @ParameterizedTest
     @ValueSource(strings = ["recipient", "recipient@tld", "recipient@.de", "recipient@domain.", "domain.com", "@domain.com", "recipient@invalid.tld"])
     fun `should not accept invalid email`(invalidEmail: String) {
-        val exception = assertThrows<IllegalArgumentException> { classUndertest.send(invalidEmail, subject, message) }
+        val exception = assertThrows<IllegalArgumentException> { classUndertest.send(MailDto(invalidEmail, subject, message)) }
         assertThat(exception.message).isEqualTo("replyTo is not a valid email")
     }
 
     @Test
     fun `should not accept empty subject`() {
-        val exception = assertThrows<IllegalArgumentException> { classUndertest.send(replyRecipient, "", message) }
+        val exception = assertThrows<IllegalArgumentException> { classUndertest.send(MailDto(replyRecipient, "", message)) }
         assertThat(exception.message).isEqualTo("subject can not be empty")
     }
 
     @Test
     fun `should not accept empty message`() {
-        val exception = assertThrows<IllegalArgumentException> { classUndertest.send(replyRecipient, subject, "") }
+        val exception = assertThrows<IllegalArgumentException> { classUndertest.send(MailDto(replyRecipient, subject, "")) }
         assertThat(exception.message).isEqualTo("message can not be empty")
     }
 }
