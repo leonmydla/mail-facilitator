@@ -27,7 +27,7 @@ jobs:
         run: mvn --batch-mode --update-snapshots verify
 
       - name: name
-        run: echo ${{ env.RELEASE_VERSION }}
+        run: echo ${GITHUB_REF#refs/*/}
 
       - name: Log in to Docker Hub
         if: startsWith(github.ref, 'refs/tags/v1.')
