@@ -14,6 +14,16 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
-      - name: Build with Maven
-        run: mvn --batch-mode --update-snapshots verify
+      - name: Discovery
+        run: pwd && ls -la && mvn help:evaluate -Dexpression=settings.localRepository
+#      - uses: actions/cache@v2
+#        env:
+#          cache-name: m2
+#        with:
+#          path: ~/.m2
+#          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+#          restore-keys: |
+#            ${{ runner.os }}-${{ env.cache-name }}-
+#      - name: Build with Maven
+#        run: mvn --batch-mode --update-snapshots verify
 
