@@ -98,7 +98,7 @@ internal class MailingServiceTest {
 
     private fun captureMail(): MimeMessage {
         val message = slot<MimeMessage>()
-        val mail = Mail(subject, content, replyRecipient)
+        val mail = Mail(replyRecipient, subject, content)
 
         every { config.sender } returns sender
         every { config.recipient } returns recipient
