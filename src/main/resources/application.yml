@@ -13,8 +13,6 @@ spring:
       mail:
         smtp:
           auth: true
-          ssl:
-            enable: true
-            required: true
           starttls:
             enable: true
+            required: true
