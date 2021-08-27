@@ -17,7 +17,7 @@ internal class MailingService(
     }
 
     private fun assembleMessage(mail: Mail): MimeMessage {
-        val mimeMessage: MimeMessage = jMailSender.createMimeMessage()
+        val mimeMessage = jMailSender.createMimeMessage()
         val messageHelper = MimeMessageHelper(mimeMessage)
 
         with(messageHelper) {
