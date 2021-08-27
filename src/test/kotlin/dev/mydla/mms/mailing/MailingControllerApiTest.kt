@@ -2,7 +2,6 @@ package dev.mydla.mms.mailing
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.ninjasquad.springmockk.MockkBean
-import com.ninjasquad.springmockk.MockkBeans
 import dev.mydla.mms.api.ResponseDto
 import io.mockk.every
 import org.junit.jupiter.api.Test
@@ -11,7 +10,6 @@ import org.junit.jupiter.params.provider.ValueSource
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
 import org.springframework.http.MediaType.APPLICATION_JSON
-import org.springframework.http.MediaType.TEXT_PLAIN
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.post
 

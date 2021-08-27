@@ -82,7 +82,7 @@ internal class MailingServiceTest {
 
     @Test
     fun `should send MimeMessage created by the JavaMailSender`() {
-        val expectedMessage = jMailSender.createMimeMessage();
+        val expectedMessage = jMailSender.createMimeMessage()
 
         every { jMailSender.createMimeMessage() } answers { expectedMessage }
 
