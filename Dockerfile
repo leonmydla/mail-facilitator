@@ -1,4 +1,4 @@
-FROM openjdk:17-slim
+FROM openjdk:11-jre-slim
 
 RUN mkdir /opt/mms && \
   cd /opt/mms
