@@ -39,7 +39,7 @@ class MailingControllerApiTest(
             content = createSendContent(replyRecipient, subject, message)
             accept = APPLICATION_JSON
         }.andExpect {
-            status { isOk }
+            status { isOk() }
             content { contentType(APPLICATION_JSON) }
             content { json(mapper.writeValueAsString(expectedMessage)) }
         }
@@ -54,7 +54,7 @@ class MailingControllerApiTest(
             content = createSendContent("", subject, message)
             accept = APPLICATION_JSON
         }.andExpect {
-            status { isBadRequest }
+            status { isBadRequest() }
             content { contentType(APPLICATION_JSON) }
             content { json(mapper.writeValueAsString(expectedMessage)) }
         }
@@ -70,7 +70,7 @@ class MailingControllerApiTest(
             content = createSendContent(invalidEmail, subject, message)
             accept = APPLICATION_JSON
         }.andExpect {
-            status { isBadRequest }
+            status { isBadRequest() }
             content { contentType(APPLICATION_JSON) }
             content { json(mapper.writeValueAsString(expectedMessage)) }
         }
@@ -85,7 +85,7 @@ class MailingControllerApiTest(
             content = createSendContent(replyRecipient, "", message)
             accept = APPLICATION_JSON
         }.andExpect {
-            status { isBadRequest }
+            status { isBadRequest() }
             content { contentType(APPLICATION_JSON) }
             content { json(mapper.writeValueAsString(expectedMessage)) }
         }
@@ -100,7 +100,7 @@ class MailingControllerApiTest(
             content = createSendContent(replyRecipient, subject, "")
             accept = APPLICATION_JSON
         }.andExpect {
-            status { isBadRequest }
+            status { isBadRequest() }
             content { contentType(APPLICATION_JSON) }
             content { json(mapper.writeValueAsString(expectedMessage)) }
         }
