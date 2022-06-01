@@ -1,4 +1,4 @@
-FROM eclipse-temurin/17-jre-jammy
+FROM eclipse-temurin:17-jre-jammy
 
 RUN mkdir /opt/mms && \
   cd /opt/mms
