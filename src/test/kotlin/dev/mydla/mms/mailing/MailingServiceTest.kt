@@ -12,9 +12,9 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.mail.javamail.JavaMailSender
 import org.springframework.mail.javamail.JavaMailSenderImpl
-import javax.mail.Message
-import javax.mail.internet.InternetAddress
-import javax.mail.internet.MimeMessage
+import jakarta.mail.Message
+import jakarta.mail.internet.InternetAddress
+import jakarta.mail.internet.MimeMessage
 
 @ExtendWith(MockKExtension::class)
 internal class MailingServiceTest {
