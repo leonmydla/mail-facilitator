@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.2.0</version>
+		<version>3.3.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -18,11 +18,11 @@
 
 	<properties>
 		<java.version>21</java.version>
-		<kotlin.version>1.9.21</kotlin.version>
+		<kotlin.version>2.0.20</kotlin.version>
 
-		<mockk.verion>1.13.8</mockk.verion>
+		<mockk.verion>1.13.12</mockk.verion>
 		<springmockk.version>4.0.2</springmockk.version>
-		<commons-validator.version>1.8.0</commons-validator.version>
+		<commons-validator.version>1.9.0</commons-validator.version>
 	</properties>
 
 	<dependencies>
